@@ -1,39 +1,25 @@
-# bonfyre-pipeline
+<p align="center"><img src="https://github.com/user-attachments/assets/7785a8d6-6e28-4892-8958-3daf85414f05" width="80" alt="Bonfÿre knight" /></p>
 
-Unified pipeline entry repo for Bonfyre.
+# Bonfÿre Pipeline
 
-This repo is a public entry vector for the single-process pipeline surface:
+**Native steps and artifacts composed into repeatable operations.**
 
-- gate
-- ingest
-- hash
-- index
-- compress
-- meter
-- stitch
-- ledger
+Teams handling ingestion, transformations, structured checks and reversible handoffs.
 
-## Why This Exists
+## Source and scope
 
-The live `BonfyrePipeline` runtime currently lives in:
+This repository preserves an **April 2026 source extraction**. It contains `cmd/bonfyre-pipeline/`, vendored core dependencies, and extraction notes. That material remains useful for inspection and for understanding a component boundary, but it is not the latest canonical source or an independently supported package release.
 
-- `/Users/nickgonzales/Projects/bonfyre-oss/cmd/BonfyrePipeline`
+The [current Bonfÿre development lineage](https://github.com/Nickgonzales76017/bonfyre) owns the integrated version: [`cmd/BonfyrePipeline/`](https://github.com/Nickgonzales76017/bonfyre/tree/main/cmd/BonfyrePipeline/). Later source changes are reviewed and published separately from private runtime state.
 
-This repo gives that surface its own clear entry point so the Bonfyre page can link to it directly.
+The older extraction kept temporary vendored dependencies and original migration notes. They are not an additional source of truth; check the [current repository](https://github.com/Nickgonzales76017/bonfyre) for the version, license, operating contract and tests relevant to your use.
 
-## Current Layout
+## See the work in context
 
-- `cmd/bonfyre-pipeline/`
-  - extracted pipeline binary source
-- `vendor/bonfyre-core/lib/libbonfyre/`
-  - temporary local dependency slice for extraction validation
-- `docs/`
-  - extraction notes
+- [Aurekai work samples](https://aurekai-work-samples.pages.dev/) — customer-facing tools and handoffs
+- [Bonfÿre developer and product guides](https://docs.aurekai.work/) — integrated operations and technical contexts
+- [Client integration examples](https://github.com/Nickgonzales76017/bonfyre/blob/main/docs/client-operations-portfolio.md) — real kinds of receiving-system work
 
-## Dependency Note
+For an **independently scoped native-C example** with its own build and verification fixtures, see [Bonfÿre Statement Import](https://github.com/Nickgonzales76017/bonfyre-statement-import).
 
-This repo currently vendors only the minimum `bonfyre-core` dependency surface needed to build locally:
-
-- `lib/libbonfyre`
-
-That is a migration convenience, not the long-term dependency model.
+The license accompanying this extraction governs its own files; the canonical repo and independent components may have different terms.

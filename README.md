@@ -6,6 +6,24 @@
 
 Teams handling ingestion, transformations, structured checks and reversible handoffs.
 
+## Shared native dependency
+
+The earlier vendored `libbonfyre` source matched
+[`bonfyre-core/lib/libbonfyre`](https://github.com/Nickgonzales76017/bonfyre-core/tree/main/lib/libbonfyre)
+by exact Git tree SHA. It is now a **pinned source submodule** instead of a
+second maintained copy.
+
+```sh
+git clone https://github.com/Nickgonzales76017/bonfyre-pipeline.git
+cd bonfyre-pipeline
+git submodule update --init -- vendor/bonfyre-core
+make -C vendor/bonfyre-core/lib/libbonfyre
+make -C cmd/bonfyre-pipeline
+```
+
+The old include/link paths and native pipeline source are unchanged. The
+dependency remains frozen until a separately reviewed gitlink update.
+
 ## Source and scope
 
 This repository preserves an **April 2026 source extraction**. It contains `cmd/bonfyre-pipeline/`, vendored core dependencies, and extraction notes. That material remains useful for inspection and for understanding a component boundary, but it is not the latest canonical source or an independently supported package release.
